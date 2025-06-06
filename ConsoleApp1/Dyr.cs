@@ -1,12 +1,16 @@
 namespace ConsoleApp1;
 public class Dyr
 {
-    public string Type { get; set; }
-    public string Lyd { get; set; }
+    private string _type;
+    private string _lyd;
 
     public Dyr(string type, string lyd)
     {
-        Type = type;
-        Lyd = lyd;
+        _type = type;
+        _lyd = lyd;
     }
+
+    public string Type => _type;
+    
+    public string Lyd => _lyd;
 }

@@ -1,22 +1,35 @@
 namespace ConsoleApp1;
 public class Farm
 {
-    public void VelgDyr(List<Dyr> Dyra)
+    private List<Dyr> _dyrPåFarmen { get; set; }
+
+    public Farm()
+    {
+        _dyrPåFarmen = new List<Dyr>
+        {
+            new Dyr("Hund", "Woff"),
+            new Dyr("Ku", "Muu"),
+            new Dyr("Katt", "Mjao"),
+            new Dyr("Fisk", "Blub"),
+        };
+    }
+
+    public void VelgDyr()
     {
         Console.WriteLine("\nSkriv hvilket av dyret du vil høre lyden til");
-        foreach (var dyr in Dyra)
+        foreach (var dyr in _dyrPåFarmen)
         {
             Console.WriteLine(dyr.Type);
         }
     }
     
-    public void FinnDyr(List<Dyr> Dyra){
+    public void FinnDyr(){
         
     string valg = Console.ReadLine();
         
         bool dyrFunnet = false;
         
-        foreach (var dyr in Dyra)
+        foreach (var dyr in _dyrPåFarmen)
         {
             if (valg.ToLower() == dyr.Type.ToLower())
             {
